@@ -39,9 +39,9 @@ resource "aws_instance" "from_list" {
   count         = length(var.ec2_instance_config_list)
   ami           = local.ami_ids[var.ec2_instance_config_list[count.index].ami]
   instance_type = var.ec2_instance_config_list[count.index].instance_type
-  subnet_id     = aws_subnet.main[
+  subnet_id = aws_subnet.main[
     var.ec2_instance_config_list[count.index].subnet_name
-    ].id
+  ].id
   # 0 % 2 = 0
   # 1 % 2 = 1
   # 2 % 2 = 0

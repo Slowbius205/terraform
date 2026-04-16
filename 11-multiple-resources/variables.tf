@@ -3,7 +3,7 @@ variable "subnet_config" {
     cidr_block = string
   }))
 
-# Ensure that all provided CIDR blocks are valid
+  # Ensure that all provided CIDR blocks are valid
   validation {
     condition = alltrue([
       # can is a hashicorp function that evaluates the given expression and returns a boolean value indicating whether the expression produced a result without any errors
